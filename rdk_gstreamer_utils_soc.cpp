@@ -22,15 +22,6 @@
 namespace rdk_gstreamer_utils
 {
 
-    enum rgu_audio_change_state {
-        AUDCHG_INIT = 0,
-        AUDCHG_CMD = 1,
-        AUDCHG_SET = 2,
-        AUDCHG_ALIGN = 3,
-    };
-
-    GstElement *mCurAudioSink;
-
     const char* getAudioDecoderName_soc()
     {
         return nullptr;
@@ -142,11 +133,7 @@ namespace rdk_gstreamer_utils
     {
         return;
     }
-    /**
-    *  Time            Size            Frames
-    * ------------------------------------------
-    *  48ms           9216 bytes       2304 frames
-    */
+
     #define GST_FIFO_SIZE_MS (131)
     void audioMixerGetDeviceInfo_soc(uint32_t& preferredFrames, uint32_t& maximumFrames)
     {
