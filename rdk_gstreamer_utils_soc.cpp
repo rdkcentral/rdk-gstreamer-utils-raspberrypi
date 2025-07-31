@@ -18,6 +18,7 @@
 */
 #include <gst/app/gstappsrc.h>
 #include "../rdk_gstreamer_utils.h"
+#include "halif-versions.h"
 
 namespace rdk_gstreamer_utils
 {
@@ -195,6 +196,7 @@ namespace rdk_gstreamer_utils
         return;
     }
 
+#if RDK_HALIF_RDK_GSTREAMER_VERSION >= 0x02000000  
     void constructLLAudioPlayer_soc(int numChannel ,GstElement *gstPipeline ,GstElement *aSrc,GstElement *aSink,GstElement *aFilter,GstElement *aDecoder)
     {
         return;
@@ -211,4 +213,6 @@ namespace rdk_gstreamer_utils
     {
         return false;
     }
+#endif
+
 }
