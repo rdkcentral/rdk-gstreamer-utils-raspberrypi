@@ -215,4 +215,35 @@ namespace rdk_gstreamer_utils
     }
 #endif
 
+#if RDK_HALIF_RDK_GSTREAMER_VERSION >= 0x02000200
+    int32_t Drmhal_Platform_Initialize_soc(std::string DrmStorePath)
+    {
+        return 0;
+    }
+
+    uint32_t Drmhal_DeleteDrmStore_soc(void* mDrmStore, std::string DrmStorePath)
+    {
+        return 0;
+    }
+
+    bool Drmhal_QueryBatchIDFromLicenseResponse_soc(void *pstdrmLicenseResponse, void *pstDRMBatchID)
+    {
+        return false;
+    }
+
+    bool Drmhal_bindCallbackPrecheck_soc(int f_dwCallbackType)
+    {
+        return false;
+    }
+
+    int32_t Drmhal_FetchOutputProtectionConfigData_soc(const void *f_pvCallbackData, int  f_dwCallbackType, const void *f_pKID, const void *f_pLID, const void *f_pv, max_resolution_update_cb cb)
+    {
+        return 0;
+    }
+
+    int32_t Drmhal_PreDecrypt_soc(void * mDecryptContext, void * mSVPContext, bool mPreallocMemoryForDecrypt, int f_cbEncryptedContent, void ** header, void * securehandle, int securehandleSz)
+    {
+        return 0;
+    }
+#endif
 }
